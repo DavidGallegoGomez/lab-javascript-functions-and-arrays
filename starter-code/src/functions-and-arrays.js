@@ -116,15 +116,16 @@ function uniquifyArray(wordsUnique) {
 
   if (wordsUnique.length === 0) {
     newArray = undefined;
-  } else {
-  for (var i = 0; i < wordsUnique.length; i++) {
-    aux = newArray.indexOf(wordsUnique[i]);
-    if (aux === -1) {
-      newArray.push(wordsUnique[i]);
-    }
   }
-  return newArray;
-}
+  else {
+    for (var i = 0; i < wordsUnique.length; i++) {
+      aux = newArray.indexOf(wordsUnique[i]);
+      if (aux === -1) {
+        newArray.push(wordsUnique[i]);
+      }
+    }
+    return newArray;
+  }
 }
 
 // Finding Elements
@@ -169,6 +170,16 @@ var wordsCount = [
 function howManyTimes (wordsCount, x) {
   var times = 0;
   
+  if (wordsCount.length === 0) { // Array vacío
+    times = undefined;
+  }
+  else {
+    for (var i = 0; i < wordsCount.length; i++) {
+      if (x === wordsCount[i]) {
+        times++;
+      }
+    } 
+  }
   return times;
 }
 
